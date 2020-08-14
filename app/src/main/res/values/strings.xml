@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Dream Theater Album</string>
+    <string name="detail" >Detail</string>
+    <string name="album_name">Nama Album </string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="List">List</string>
+    <string name="Grid">Grid</string>
+    <string name="withCardView">cardView</string>
+</resources>

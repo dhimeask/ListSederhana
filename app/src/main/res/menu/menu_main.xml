@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_list"
+        android:icon="@drawable/heart"
+        android:title="Tampilan List"
+        android:visible="true"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/action_grid"
+        android:icon="@drawable/help"
+        android:title="Tampilan Grid"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/action_cardview"
+        android:checkable="false"
+        android:enabled="true"
+        android:drawableLeft="@drawable/home"
+        android:title="Tampilan Cardview"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/iseng"
+        android:enabled="false"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Iseng"
+        app:showAsAction="never" />
+</menu>
