@@ -15,8 +15,8 @@ public class AlbumData {
             "Systematic Chaos",
             "Black Clouds and Silver Linings",
             "A Dramatic Turn of Events",
-            "The Astonishing",
             "Dream Theater",
+            "The Astonishing",
             "Distance Over Time"
     };
     private static String[] albumDetails = {
@@ -42,8 +42,9 @@ public class AlbumData {
             R.drawable.fallingintoinfinity,
             R.drawable.metropolispt2scenes,
             R.drawable.sixdegreesofinnerturbulence,
-            R.drawable.metropolispt2scenes,
+            R.drawable.trainofthought,
             R.drawable.octavarium,
+            R.drawable.systematicchaos,
             R.drawable.blackcloudsandsilverlining,
             R.drawable.adramaticturnofevents,
             R.drawable.dreamtheater,

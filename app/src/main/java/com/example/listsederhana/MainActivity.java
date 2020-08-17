@@ -7,15 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private int time_load=4000;
 
     private RecyclerView rvAlbum;
     private ArrayList<Album> list = new ArrayList<>(  );
@@ -25,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_home );
+        setContentView( R.layout.activity_main );
+
+//        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//        setSupportActionBar(myToolbar);
+
         setActionBarTitle( title );
 
         rvAlbum = findViewById(R.id.rv_album);
@@ -34,14 +37,10 @@ public class MainActivity extends AppCompatActivity {
         list.addAll(AlbumData.getListData());
         showRecyclerList();
 
-        new Handler().postDelayed( new Runnable() {
-            @Override
-            public void run() {
-                Intent home=new Intent(MainActivity.this, Home.class);
-                startActivity(home);
-                finish();
-            }
-        }, time_load );
+
+    }
+
+    private void setSupportActionBar(Toolbar myToolbar) {
     }
 
     private void showRecyclerList() {
@@ -85,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
         rvAlbum.setAdapter(cardViewAlbumAdapter);
     }
 
+    private void showDetailView(){
+        rvAlbum.setLayoutManager(new LinearLayoutManager(this));
+        DetailAlbum detailAlbum= new DetailAlbum(list);
+        rvAlbum.setAdapter(detailAlbum);
+    }
+
     public void setMode(int selectedMode) {
         switch (selectedMode) {
             case R.id.action_list:
@@ -110,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedAlbum(Album album) {
-        Toast.makeText( this,"Kamu pilih"+album.getName(),Toast.LENGTH_SHORT ).show();
-
+        Toast.makeText( this,"Kamu pilih "+album.getName(),Toast.LENGTH_SHORT ).show();
+        //super.onCreate(  );
+        //R.id.btn_set_detail
     }
 }
